@@ -1,72 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500&display=swap" rel="stylesheet">
+    <title>تطبيق قلم</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            /* light shade of grey */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Noto Sans Arabic', sans-serif;
+            flex-wrap: wrap;
+            /* allows the flex items to wrap onto multiple lines */
+        }
 
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="qalam">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: white;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png" />
+        a:hover {
+            background-color: #f2f2f2;
+        }
 
-  <title>قلم</title>
-  <link rel="manifest" href="manifest.json">
-  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-messaging.js"></script>
+        .center-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-  <script>
-    const serviceWorkerVersion = "218413481";
-  </script>
-  <script src="flutter.js" defer></script>
+
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 600px) {
+            .column {
+                flex-basis: 100%;
+                /* makes the column take up the full width on small screens */
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyC9sqehoMNAfcfXAd9VUJR4A8HWr3raonc",
-      authDomain: "ahrar-app.firebaseapp.com",
-      projectId: "ahrar-app",
-      storageBucket: "ahrar-app.appspot.com",
-      messagingSenderId: "519776664484",
-      appId: "1:519776664484:web:0d60b4b9dfd5331d065f31",
-      measurementId: "G-KR16H61D5E"
-    };
+    <div class="column">
+        <img src="logo.svg" width="80%">
+        <h1 style="font-size: 50px;">قلم</h1>
+    </div>
+    <div class="column" style="direction: rtl;">
+        <h1 style="font-size: 40px;">أحصل على التطبيق:</h1>
+        <a style="font-size: 30px;" href="https://github.com/Jadi255/Ahrar/releases/download/Apk/qalam.apk"> لأجهزة
+            Android</a>
+        <a style="font-size: 30px;" href="https://qalam.up.railway.app/"> لأجهزة iPhone</a>
+        <br>
+        <div style="padding:5%">
 
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const messaging = firebase.messaging();
-  </script>
-  <script>
-    window.addEventListener('load', function (ev) {
-      // Download main.dart.js
-      _flutter.loader.loadEntrypoint({
-        serviceWorker: {
-          serviceWorkerVersion: serviceWorkerVersion,
-        },
-        onEntrypointLoaded: function (engineInitializer) {
-          engineInitializer.initializeEngine().then(function (appRunner) {
-            appRunner.runApp();
-          });
-        }
-      });
-    });
-  </script>
-  <script>
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", function () {
-        navigator.serviceWorker.register("/firebase-messaging-sw.js");
-      });
-    }
-  </script>
+            <h3>
+                للتحميل على أجهزة iPhone، الرحاء اتباع الخطوات التالية:
 
+            </h3>
+            <ol>
+                <li>فتح رابط التطبيق (https://qalam.up.railway.app) عبر متصفح Safari</li>
+                <li>فتح قائمة الخيارات داخل المتصفح ثم الضغط على "Add to Home Screen/أضف إلى الشاشة الرئيسية"</li>
+            </ol>
+            <div class="center-image">
+                <img src="download.jpg" width="50%" alt="">
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
